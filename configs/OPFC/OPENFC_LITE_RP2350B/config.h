@@ -56,7 +56,7 @@
 
 // Analog OSD (framebuffer OSD, PIO2)
 #define ENABLE_FB_OSD        1
-#define DEFAULT_FEATURES     (FEATURE_OSD)
+#define DEFAULT_FEATURES     (FEATURE_OSD | FEATURE_ESC_SENSOR)
 #define DEFAULT_OSD_DISPLAYPORT_DEVICE OSD_DISPLAYPORT_DEVICE_FBOSD
 #define DEFAULT_VIDEO_SYSTEM VIDEO_SYSTEM_AUTO // digital VTX users set vcd_video_system = HD
 #define OSD_W_PIN            PA4
@@ -92,6 +92,9 @@
 #define GYRO_1_CLKIN_PIN     PA15 // unused by ST parts
 #define GYRO_1_SPI_INSTANCE  SPI0
 
+// BMI270 sits rotated 90 deg vs ICM parts on the shared footprint (#15484).
+#define ENABLE_BMI270_ALIGN_AS_ICM 1
+
 // LED strip pad
 #define LED_STRIP_PIN        PA23
 
@@ -100,6 +103,11 @@
 #define MOTOR2_PIN           PA30
 #define MOTOR3_PIN           PA29
 #define MOTOR4_PIN           PA28
+
+// Bidirectional DShot and ESC serial telemetry on by default: the ESC plug's
+// telemetry pin is PIO UART1 RX (GPIO27).
+#define DEFAULT_DSHOT_TELEMETRY DSHOT_TELEMETRY_ON
+#define ESC_SENSOR_UART      SERIAL_PORT_PIOUART1
 
 // Blackbox: microSD on SPI1
 #define USE_SDCARD

@@ -97,6 +97,10 @@
 #define MOTOR3_PIN           PA23
 #define MOTOR4_PIN           PA22
 
+// Bidirectional DShot on by default. ESC serial telemetry stays off: its pin
+// shares PIO UART0 with the GPS pads.
+#define DEFAULT_DSHOT_TELEMETRY DSHOT_TELEMETRY_ON
+
 // Status LED (blue)
 #define LED0_PIN             PA26
 
