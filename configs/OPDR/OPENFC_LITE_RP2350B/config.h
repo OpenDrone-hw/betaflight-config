@@ -19,17 +19,14 @@
  * If not, see <http://www.gnu.org/licenses/>.
  */
 
-
 #pragma once
 
 #define FC_TARGET_MCU        RP2350B
 #define BOARD_NAME           OPENFC_LITE_RP2350B
-#define MANUFACTURER_ID      OPFC
+#define MANUFACTURER_ID      OPDR
 
 // OpenFC-Lite rev3.3: 30.5x30.5 mm mounting, RP2354B (QFN-80), 3S-8S
 // https://github.com/OpenDrone-hw/OpenFC-Lite
-// Pin map extracted from the rev3.3 hardware/OpenFC.kicad_sch netlist
-// (OpenFC-Lite commit b8b4790). Rev 2 boards use OPENFC_LITE_REV2_RP2350B.
 
 // UART0: digital VTX connector (U8) and TX1/RX1 pads
 #define UART0_TX_PIN         PA0
@@ -75,7 +72,7 @@
 // Status LED
 #define LED0_PIN             PA12
 
-// Gyro+acc on SPI0
+// Gyro+acc on SPI0: BMI270 fitted; the footprint also takes ICM-426xx/456xx
 #define USE_GYRO
 #define USE_ACC
 #define USE_ACCGYRO_BMI270
@@ -89,7 +86,7 @@
 #define SPI0_SDI_PIN         PA20
 #define GYRO_1_CS_PIN        PA14
 #define GYRO_1_EXTI_PIN      PA13
-#define GYRO_1_CLKIN_PIN     PA15 // unused by ST parts
+#define GYRO_1_CLKIN_PIN     PA15 // used by ICM parts only
 #define GYRO_1_SPI_INSTANCE  SPI0
 
 // BMI270 sits rotated 90 deg vs ICM parts on the shared footprint (#15484).

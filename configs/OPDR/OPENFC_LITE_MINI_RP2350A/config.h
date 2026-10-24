@@ -23,10 +23,10 @@
 
 #define FC_TARGET_MCU        RP2350A
 #define BOARD_NAME           OPENFC_LITE_MINI_RP2350A
-#define MANUFACTURER_ID      OPFC
+#define MANUFACTURER_ID      OPDR
 
-// OpenFC-Lite-Mini Rev 2: 20x20 mm, RP2354A (QFN-60), 3S-6S
-// https://github.com/incutec-hw/OpenFC-Lite-Mini
+// OpenFC-Lite-Mini rev3.3: 20x20 mm mounting, RP2354A (QFN-60), 3S-6S
+// https://github.com/OpenDrone-hw/OpenFC-Lite-Mini
 
 // UART0: digital VTX connector (U8, JST SH 6-pin)
 #define UART0_TX_PIN         PA0
@@ -50,8 +50,7 @@
 // LED strip pad
 #define LED_STRIP_PIN        PA8
 
-// Gyro+acc on SPI1: Rev 2 boards assembled with BMI270 (KiCad/BOM still says
-// LSM6DSV16X); footprint also takes ICM-426xx/456xx
+// Gyro+acc on SPI1: BMI270 fitted; the footprint also takes ICM-426xx/456xx
 #define USE_GYRO
 #define USE_ACC
 #define USE_ACCGYRO_BMI270
