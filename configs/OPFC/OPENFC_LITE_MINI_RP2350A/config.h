@@ -66,6 +66,9 @@
 #define GYRO_1_EXTI_PIN      PA9
 #define GYRO_1_SPI_INSTANCE  SPI1
 
+// BMI270 sits rotated 90 deg vs ICM parts on the shared footprint (#15484).
+#define ENABLE_BMI270_ALIGN_AS_ICM 1
+
 // Analog OSD (framebuffer OSD, PIO2)
 #define ENABLE_FB_OSD        1
 #define DEFAULT_FEATURES     (FEATURE_OSD)
