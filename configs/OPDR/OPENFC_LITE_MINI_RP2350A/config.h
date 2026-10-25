@@ -77,6 +77,8 @@
 #define DEFAULT_FEATURES     (FEATURE_OSD)
 #define DEFAULT_OSD_DISPLAYPORT_DEVICE OSD_DISPLAYPORT_DEVICE_FBOSD
 #define DEFAULT_VIDEO_SYSTEM VIDEO_SYSTEM_AUTO // digital VTX users set vcd_video_system = HD
+// MSP DisplayPort on the digital VTX connector by default, so going digital only takes vcd_video_system = HD
+#define MSP_DISPLAYPORT_UART SERIAL_PORT_UART0
 #define OSD_W_PIN            PA14
 #define OSD_EN_PIN           PA15
 #define OSD_SYNC_PIN         PA16
