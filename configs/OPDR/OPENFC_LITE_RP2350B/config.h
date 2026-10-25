@@ -99,7 +99,7 @@
 // no longer fits and the OSD stays blank.
 #define LED_STRIP_PIN        PA23
 #define PIO_LEDSTRIP_INDEX   1
-#define LED_STRIP_INVERTED   // pad driven by N-FET Q2 with 2.4k to 5V: inverts
+// No LED_STRIP_INVERTED: Q2 (gate on 3.3V, source on the GPIO, 2.4k to 4.5V) is a non-inverting level shifter
 
 // Motors (PIO0 DShot), silk M1-M4 = GPIO31..28
 #define MOTOR1_PIN           PA31
