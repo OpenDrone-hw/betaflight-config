@@ -47,8 +47,12 @@
 #define SERIALRX_PROVIDER    SERIALRX_CRSF
 #define SERIALRX_UART        SERIAL_PORT_UART1
 
-// LED strip pad
+// LED strip pad. Its WS2812 program goes on PIO1 (with the PIO UART): the
+// default PIO2 is shared with the FB OSD, whose 31-instruction program then
+// no longer fits and the OSD stays blank.
 #define LED_STRIP_PIN        PA8
+#define PIO_LEDSTRIP_INDEX   1
+#define LED_STRIP_INVERTED   // pad driven by N-FET Q6 with 2.4k to 5V: inverts
 
 // Gyro+acc on SPI1: BMI270 fitted; the footprint also takes ICM-426xx/456xx
 #define USE_GYRO

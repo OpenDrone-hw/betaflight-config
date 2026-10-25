@@ -92,8 +92,12 @@
 // BMI270 sits rotated 90 deg vs ICM parts on the shared footprint (#15484).
 #define ENABLE_BMI270_ALIGN_AS_ICM 1
 
-// LED strip pad
+// LED strip pad. Its WS2812 program goes on PIO1 (with the PIO UARTs): the
+// default PIO2 is shared with the FB OSD, whose 31-instruction program then
+// no longer fits and the OSD stays blank.
 #define LED_STRIP_PIN        PA23
+#define PIO_LEDSTRIP_INDEX   1
+#define LED_STRIP_INVERTED   // pad driven by N-FET Q2 with 2.4k to 5V: inverts
 
 // Motors (PIO0 DShot), silk M1-M4 = GPIO31..28
 #define MOTOR1_PIN           PA31
